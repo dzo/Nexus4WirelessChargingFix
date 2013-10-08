@@ -39,6 +39,8 @@ public class BackgroundIntentService extends IntentService {
 //			while ((l=reader.readLine())!=null)
 //				Log.i(TAG,l);
 			p.waitFor();
+			p=Runtime.getRuntime().exec("su -c echo PowerManagerService.WirelessChargerDetector > /sys/power/wake_unlock  ");
+			p.waitFor();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
